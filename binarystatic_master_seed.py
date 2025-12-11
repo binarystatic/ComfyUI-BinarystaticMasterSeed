@@ -1,4 +1,4 @@
-class BinaryStaticMasterSeed:
+class BinarystaticMasterSeed:
     """
     A simple Master Seed node that outputs a static integer.
     Designed to serve as a single source of truth for seed values across a workflow.
