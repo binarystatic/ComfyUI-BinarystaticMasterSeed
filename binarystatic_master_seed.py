@@ -1,6 +1,6 @@
 class BinarystaticMasterSeed:
     """
-    A simple Master Seed node that outputs a static integer.
+    A Master Seed node that outputs a static integer and a formatted filename string.
     """
     
     def __init__(self):
@@ -17,13 +17,21 @@ class BinarystaticMasterSeed:
                     "step": 1,
                     "display": "number" 
                 }),
+                "filename_prefix": ("STRING", {
+                    "default": "ComfyUI",
+                    "multiline": False
+                }),
             },
         }
 
-    RETURN_TYPES = ("INT",)
-    RETURN_NAMES = ("seed_int",)
+    RETURN_TYPES = ("INT", "STRING",)
+    RETURN_NAMES = ("seed_int", "filename_string",)
     FUNCTION = "do_work"
     CATEGORY = "Binarystatic"
 
-    def do_work(self, seed):
-        return (seed,)
+    def do_work(self, seed, filename_prefix):
+        # Concatenate prefix and seed with an underscore for clean filenames
+        # Example Output: "MyProject_850815272867312"
+        filename_string = f"{filename_prefix}_{seed}"
+        
+        return (seed, filename_string,)
