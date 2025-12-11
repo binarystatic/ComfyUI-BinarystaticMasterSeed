@@ -1,7 +1,6 @@
 class BinarystaticMasterSeed:
     """
     A simple Master Seed node that outputs a static integer.
-    Designed to serve as a single source of truth for seed values across a workflow.
     """
     
     def __init__(self):
@@ -14,7 +13,7 @@ class BinarystaticMasterSeed:
                 "seed": ("INT", {
                     "default": 0, 
                     "min": 0, 
-                    "max": 0xffffffffffffffff, # Ensures 64-bit support
+                    "max": 0xffffffffffffffff,
                     "step": 1,
                     "display": "number" 
                 }),
@@ -24,7 +23,7 @@ class BinarystaticMasterSeed:
     RETURN_TYPES = ("INT",)
     RETURN_NAMES = ("seed_int",)
     FUNCTION = "do_work"
-    CATEGORY = "BinaryStatic"
+    CATEGORY = "Binarystatic"
 
     def do_work(self, seed):
         return (seed,)

@@ -1,4 +1,4 @@
-from .binarystatic_master_seed import BinaryStaticMasterSeed
+from .binarystatic_master_seed import BinarystaticMasterSeed
 
 NODE_CLASS_MAPPINGS = {
     "BinarystaticMasterSeed": BinarystaticMasterSeed
